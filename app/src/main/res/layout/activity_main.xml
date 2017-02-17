@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E91E63"
+    android:orientation="vertical"
+    tools:context="com.example.android.courtcounter.MainActivity">
+
+    <LinearLayout
+        android:id="@+id/name_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#F06292"
+        android:elevation="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:orientation="vertical"
+        android:padding="7dp">
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/container_team_a"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/edit_team_a"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColorHint="#F06292"
+                android:hint="Name of First Team" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/container_team_b"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/edit_team_b"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Name of Second Team" />
+        </android.support.design.widget.TextInputLayout>
+
+        <Button
+            android:id="@+id/play_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:background="#C2185B"
+            android:clickable="true"
+            android:text="PLAY" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:elevation="5dp"
+        android:padding="7dp"
+        android:background="#F06292"
+        android:orientation="vertical"
+        android:layout_below="@id/name_layout">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:background="#C2185B">
+
+
+
+            <ImageView
+                android:id="@+id/team_a_image"
+                android:layout_width="50dp"
+                android:layout_alignParentLeft="true"
+                android:layout_height="50dp"
+                android:layout_marginTop="7dp"
+                android:src="@drawable/basketball"
+                android:adjustViewBounds="true"/>
+
+            <TextView
+                android:id="@+id/team_a_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/team_a_image"
+                android:layout_marginLeft="5dp"
+                android:textSize="15sp"
+                android:text="TEAM A"/>
+            <TextView
+                android:id="@+id/team_a_score"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/team_a_image"
+                android:layout_below="@id/team_a_name"
+                android:layout_marginLeft="10dp"
+                android:text="0"
+                android:textSize="35sp"/>
+
+            <ImageView
+                android:id="@+id/team_b_image"
+                android:layout_width="50dp"
+                android:layout_alignParentRight="true"
+                android:layout_height="50dp"
+                android:layout_marginTop="7dp"
+                android:src="@drawable/basketball"
+                android:adjustViewBounds="true"/>
+
+
+            <TextView
+                android:id="@+id/team_b_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@id/team_b_image"
+                android:layout_marginRight="5dp"
+                android:textSize="15sp"
+                android:text="TEAM B"/>
+            <TextView
+                android:id="@+id/team_b_score"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@id/team_b_image"
+                android:layout_below="@id/team_a_name"
+                android:layout_marginRight="10dp"
+                android:text="0"
+                android:textSize="35sp"/>
+            <TextView
+                android:id="@+id/vs"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="vs"
+                android:textSize="35sp"
+                android:layout_centerHorizontal="true"
+                />
+
+            <TextView
+                android:id="@+id/time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/vs"
+                android:layout_centerHorizontal="true"
+                android:textSize="10sp"/>
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Commentary : "
+            android:textSize="20sp"
+            android:layout_margin="5dp"/>
+
+        <TextView
+            android:id="@+id/commentary_one"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="15sp"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dp"/>
+
+        <TextView
+            android:id="@+id/commentary_two"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="15sp"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dp" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/end_reset_buttons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#C2185B"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/end_game_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#C2185B"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:text="END GAME"
+            android:textSize="15sp"
+            android:textAlignment="center" />
+        <Button
+            android:id="@+id/reset_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_weight="1"
+            android:text="RESET"
+            android:background="#C2185B"
+            android:textSize="15sp"
+            android:textAlignment="center" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/points_buttons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/end_reset_buttons"
+        android:background="#C2185B">
+
+        <Button
+            android:id="@+id/three_points"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#c2185b"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:text="3 POINTS"
+            android:layout_weight="1"/>
+        <Button
+            android:id="@+id/two_points"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#c2185b"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:text="2 POINTS"
+            android:layout_weight="1"/>
+        <Button
+            android:id="@+id/one_point"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#c2185b"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:text="1 POINT"
+            android:layout_weight="1"/>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/team_buttons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#C2185B"
+        android:layout_above="@id/points_buttons">
+
+        <Button
+            android:id="@+id/team_a_add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#c2185b"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:text="TEAM A"
+            android:layout_weight="1"/>
+        <Button
+            android:id="@+id/team_b_add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#c2185b"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:text="TEAM B"
+            android:layout_weight="1"/>
+    </LinearLayout>
+
+
+
+</RelativeLayout>
